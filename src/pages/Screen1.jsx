@@ -3,8 +3,7 @@ import { useNavigate} from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { axiosClient } from "../axios";
-import {showErrorNotification, showSuccessNotification} from "../components/alert";
-import { ToastContainer } from "react-toastify";
+
 
 const Screen1 = () => {
   const [post, setPost] = useState([]);
@@ -62,7 +61,6 @@ const Screen1 = () => {
           </div>
         </form>
       </main>
-      <ToastContainer />
     </section>
   )
 }

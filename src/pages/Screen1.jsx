@@ -25,7 +25,7 @@ const Screen1 = () => {
       try {
         const response = await axiosClient.post("/characterInput", values);
         setPost(response.data);
-        alert("Character input successful.")
+        alert("Character inputed successfully.")
         setTimeout(() =>{
           navigate("/screen-2")
         })

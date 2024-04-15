@@ -1,3 +1,5 @@
+// Author: Damilare Ajayi
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Screen1 from "./pages/Screen1";
 import Screen2 from "./pages/Screen2";

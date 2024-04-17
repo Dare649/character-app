@@ -14,26 +14,27 @@ For this project I used the following React js frontend dependencies;
 
 - Axios: for managing my http requests with the baseURL - "http://localhost:3000/"
 
-- Formik & Yup: for managing my form and validations
 
-- Json-server: as a dummy server for managing data
+- Json-server: as a dummy server for managing data. I run the json-server by typing; npx json-server -p 3000 -w data/db.json ensuring the port (3000) is the same as the baseURL "http://localhost:3000/"
 
 - React Icons: for allowing me using react icons
 
 - Tailwind CSS: for my styling 
 
+- React Router DOM: for managing all navigations in the application
+
 
 
 # Process
 
-- Users lands on the screen-1 which is the home route requesting for users to input a desired character not more than 20 characters
+- Users lands on the input screen which is the home route requesting for users to input a desired character 
 
-- Upon successfull input of the desired characters, the user will be directed to view all characters that has been inputted so far
+- Upon successfull input of the desired characters, the user will be directed to view all characters that has been inputted so far individually in a card. Same character will have the same card color
 
-- Users can click on the "back" button to got back to screen-1 from screen-2
+- Users can click on the "back" button to got back to input screen from input screen
 
-- Users can click on the character in screen-2 which will direct them to see the individual character clicked. Note: users should click on the word character and not the entire box
+- When a user click on a desired character on the result screen to delete, all the same character will delete also leaving characters that are not the same
 
-- Users can click on the "back" button to return to screen-2
+- Users can click on the "back" button to return to input screen
 
-- Users can delete their desired character.
+

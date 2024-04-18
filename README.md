@@ -33,7 +33,7 @@ For this project I used the following React js frontend dependencies;
 
 - Users can click on the "back" button to got back to input screen from input screen
 
-- When a user click on a desired character on the result screen to delete, all the same character will delete also leaving characters that are not the same
+- When a user click on a desired character on the result screen to delete, all the duplicate characters will deleted leaving the character that was clicked
 
 - Users can click on the "back" button to return to input screen
 

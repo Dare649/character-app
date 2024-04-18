@@ -20,8 +20,15 @@ const ResultScreen = () => {
     }, [string, navigate]);
 
     const handleCharClick = (char) => {
-        const regex = new RegExp(`${char}{2,}`, 'g');
-        const updatedString = originalString.replace(regex, char);
+        let foundDuplicate = false;
+        const updatedString = originalString.split('').filter((c) => {
+            if (c === char && !foundDuplicate) {
+                foundDuplicate = true;
+                return true;
+            }
+            return c !== char;
+        }).join('');
+
         setOriginalString(updatedString);
         setResultString(updatedString);
     };

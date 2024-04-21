@@ -15,9 +15,18 @@ const ResultScreen = () => {
             navigate('/');
             return;
         }
-        setOriginalString(string);
-        setResultString(string);
+        setOriginalString(decodeURIComponent(string)); // Decode URL parameter and set as originalString
+        setResultString(decodeURIComponent(string));
     }, [string, navigate]);
+
+    useEffect(() => {
+        const hasDuplicates = originalString.length !== new Set(originalString).size;
+        if (!hasDuplicates) {
+            setSuccessMessage(`All duplicate characters removed successfully!\nOriginal String: ${decodeURIComponent(string)}\nResult String: ${resultString}`);
+        } else {
+            setSuccessMessage('');
+        }
+    }, [originalString, resultString, string]);
 
     const handleCharClick = (char) => {
         let foundDuplicate = false;
@@ -50,14 +59,9 @@ const ResultScreen = () => {
         setContentWithColors(updatedContentWithColors);
     }, [originalString]);
 
-    useEffect(() => {
-        const hasDuplicates = originalString.length !== new Set(originalString).size;
-        if (!hasDuplicates) {
-            setSuccessMessage(`All duplicate characters removed successfully!\nOriginal String: ${originalString}\nResult String: ${resultString}`);
-        } else {
-            setSuccessMessage('');
-        }
-    }, [originalString, resultString]);
+    const handleBack = () => {
+        navigate('/');
+    };
 
     return (
         <section className="screen-2 w-full h-screen bg-black/80">
@@ -66,6 +70,7 @@ const ResultScreen = () => {
                 {successMessage ? (
                     <div className="success mb-20 text-center text-green-500 font-bold">
                         <p className='mb-20'>{successMessage}</p>
+                        
                         <Link
                             className="font-bold capitalize text-lg outline-none hover:border-2 active:border-2 bg-black rounded-lg text-white w-full hover:bg-transparent hover:text-black hover:border-black active:bg-transparent active:text-black active:border-black h-16 py-3 px-5"
                             to="/"

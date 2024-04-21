@@ -30,7 +30,7 @@ const InputScreen = () => {
         <div className="inputScreen w-full h-screen bg-black/80 py-20">
             <div className="container lg:w-[50%] sm:w-full mx-auto sm:h-70 lg:h-[50%] flex flex-col bg-white py-14">
                 <h1 className='capitalize font-bold text-center text-xl'>duplicate character card remover</h1>
-                {error && <div className="error">{error}</div>}
+                {error && <div className="error text-center text-red-500 font-medium">{error}</div>}
                 <form onSubmit={handleSubmit} className='w-full h-full px-3'>
                     <input
                         type="text"
